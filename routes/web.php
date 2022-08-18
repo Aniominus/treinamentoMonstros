@@ -13,11 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
 
-    $nome = "Antonio";
 
-    return view('welcome',['nome' => $nome]);
+Route::get('/index', function () {
+    $goblin = array(
+        'nome' => 'Goblin',
+        'desafio'  => '1/4',
+        'tipo'  => 'Humanoide',
+        'ataque' => '+5',
+        'deslocamento' => '9 metros',
+        'action' => 'Nada'
+    );
+    return view('monstros.index', ['goblin' => $goblin]);
 });
+
+// Route::get('/', [ TimeController::class, 'index'])->name('time.index');
+//  // 'name of function'
 
 
