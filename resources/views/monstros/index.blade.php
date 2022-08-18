@@ -49,7 +49,7 @@
                     <th>Ações</th>
                 </tr>
                 <tr>
-                    <td>Goblin</td>
+                    <td>{{$goblin['nome']}}</td>
                     <td>1/4</td>
                     <td>Humanoide</td>
                     <td>13</td>
