@@ -11,4 +11,23 @@ body {
 
 h1 {
     color: red;
+    margin: 2rem;
+}
+
+p {
+    margin: 2rem;
+}
+
+.main-table {
+    margin: 2rem;
+}
+
+td {
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+th {
+    padding: 1rem;
+    border: 1px solid black;
 }
