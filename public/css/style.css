@@ -5,29 +5,32 @@ html {
 }
 
 body {
-    background-image: url('img/background');
+    background-image: url(https://tormentarpg.com.br/wp-content/uploads/2020/05/capa-tormentarpg-2020-Tormenta2.png?id=4790);
 }
 
+.heading img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+h1,
+.main-table,
+p,
+.top-wrapper
+ {
+    margin: 2rem;
+    color: white;
+    text-decoration: none;
+}
 
 h1 {
     color: red;
-    margin: 2rem;
 }
 
-p {
-    margin: 2rem;
-}
-
-.main-table {
-    margin: 2rem;
-}
-
-td {
-    padding: 1rem;
-    border: 1px solid black;
-}
-
+td,
 th {
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid white;
 }
