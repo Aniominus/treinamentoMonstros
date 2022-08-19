@@ -50,4 +50,9 @@ Route::get('/index', function () {
 
     return view('monstros.index', ['monstros' => $monstros]);
 });
-// 'goblin' => $goblin, 'esqueleto' => $esqueleto,'gnoll' => $gnoll
+
+
+
+Route::get('/form', function () {
+    return view('monstros.form');
+});
