@@ -33,10 +33,12 @@
             <img src="/img/t20logo.png" alt="Logo">
         </div>
 
+        <div class="top-wrapper">
+
             <h1>Compêndio Monstruoso</h1>
             <p>Sua referência rápida para matar personagens vacilões.</p>
 
-        <div class="top-wrapper">
+
             <div>
                 <a type="button" class="btn" href="">Criar um Monstro</a>
             </div>
@@ -56,7 +58,7 @@
                 </tr>
 
         @foreach ($monstros as $monstro)
-            <tr>
+            <tr class="basic-info">
                 <td>{{$monstro['nome']}}</td>
                 <td>{{$monstro['desafio']}}</td>
                 <td>{{$monstro['tipo']}}</td>
