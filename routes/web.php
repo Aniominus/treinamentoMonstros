@@ -16,18 +16,38 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/index', function () {
-    $goblin = array(
+
+    $monstros = array(
+
+    'goblin' => array(
         'nome' => 'Goblin',
         'desafio'  => '1/4',
+        'defesa' => '13',
         'tipo'  => 'Humanoide',
         'ataque' => '+5',
         'deslocamento' => '9 metros',
-        'action' => 'Nada'
-    );
-    return view('monstros.index', ['goblin' => $goblin]);
+    ),
+
+    'esqueleto' => array(
+        'nome' => 'Esqueleto',
+        'desafio'  => '1/2',
+        'defesa' => '15',
+        'tipo'  => 'Morto-Vivo',
+        'ataque' => '+7',
+        'deslocamento' => '12 metros',
+    ),
+
+    'gnoll' => array(
+        'nome' => 'Gnoll',
+        'desafio'  => '1',
+        'defesa' => '16',
+        'tipo'  => 'Humanoide',
+        'ataque' => '+9',
+        'deslocamento' => '15 metros',
+    )
+
+);
+
+    return view('monstros.index', ['monstros' => $monstros]);
 });
-
-// Route::get('/', [ TimeController::class, 'index'])->name('time.index');
-//  // 'name of function'
-
-
+// 'goblin' => $goblin, 'esqueleto' => $esqueleto,'gnoll' => $gnoll
