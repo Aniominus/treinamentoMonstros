@@ -27,19 +27,25 @@
         <script src="/js/scripts.js"></script>
 
     </head>
-    <body class="base">
+    <body>
 
         <div class="heading">
             <img src="/img/t20logo.png" alt="Logo">
-
-            <h1>Compêndio Monstruoso</h1>
         </div>
 
-        <p>Sua referência rápida para matar personagens vacilões.</p>
+            <h1>Compêndio Monstruoso</h1>
+            <p>Sua referência rápida para matar personagens vacilões.</p>
 
-        <div class="main-wrapper">
-            <table class="main-table">
-                <tr class="table-strut">
+        <div class="top-wrapper">
+            <div>
+                <a type="button" class="btn" href="">Criar um Monstro</a>
+            </div>
+        </div>
+
+        <div class="bottom-wrapper">
+            <div class="table-wrapper">
+                <table class="main-table">
+                <tr class="table-head">
                     <th>Nome</th>
                     <th>Desafio</th>
                     <th>Tipo</th>
@@ -48,33 +54,25 @@
                     <th>Deslocamento</th>
                     <th>Ações</th>
                 </tr>
-                <tr>
-                    <td>{{$goblin['nome']}}</td>
-                    <td>1/4</td>
-                    <td>Humanoide</td>
-                    <td>13</td>
-                    <td>+5</td>
-                    <td>9 metros</td>
-                </tr>
-                <tr>
-                    <td>Esqueleto</td>
-                    <td>1/2</td>
-                    <td>Morto-Vivo</td>
-                    <td>15</td>
-                    <td>+7</td>
-                    <td>12 metros</td>
-                </tr>
-                <tr>
-                    <td>Orc</td>
-                    <td>1</td>
-                    <td>Humanoide</td>
-                    <td>16</td>
-                    <td>+9</td>
-                    <td>9 metros</td>
-                </tr>
 
-            </table>
+        @foreach ($monstros as $monstro)
+            <tr>
+                <td>{{$monstro['nome']}}</td>
+                <td>{{$monstro['desafio']}}</td>
+                <td>{{$monstro['tipo']}}</td>
+                <td>{{$monstro['defesa']}}</td>
+                <td>{{$monstro['ataque']}}</td>
+                <td>{{$monstro['deslocamento']}}</td>
+                <td>
+                    <a type="button" class="btn" href="">Visualizar</a>
+                    <a type="button" class="btn" href="">Editar</a>
+                </td>
+            </tr>
+        @endforeach
+                </table>
 
+            </div>
         </div>
+
     </body>
 </html>
