@@ -15,22 +15,62 @@ body {
     width: 60%;
 }
 
-h1,
 .main-table,
-p,
-.top-wrapper
+.top-wrapper,
+.form-wrapper
  {
     margin: 2rem;
     color: white;
-    text-decoration: none;
+}
+
+.top-wrapper .btn,
+.form-wrapper label {
+    color: yellow;
+    font-size: 1.5rem;
+}
+
+.top-wrapper p {
+    font-size: 1.5rem;
+}
+
+.main-table .basic-info .btn {
+    color: yellow;
+    padding: 1rem;
+}
+
+.main-table .basic-info .btn:hover,
+.top-wrapper .btn:hover {
+    color:firebrick
 }
 
 h1 {
     color: red;
+    font-size: 3rem;
 }
 
 td,
 th {
     padding: 1rem;
     border: 1px solid white;
+}
+
+.form-wrapper label,
+.form-wrapper input {
+    display: block;
+}
+
+.form-wrapper .form-left input,
+.form-wrapper .form-center input  {
+    margin: 0.5rem 0rem;
+}
+
+.form-wrapper {
+    display: flex;
+}
+
+.form-wrapper .form-left,
+.form-wrapper .form-center {
+    margin-right: 5rem;
+    border: 1px white solid;
+    padding: 0.5rem;
 }
