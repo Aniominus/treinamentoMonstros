@@ -17,7 +17,8 @@ body {
 
 .main-table,
 .top-wrapper,
-.form-wrapper
+.form-wrapper,
+.form-submit
  {
     margin: 2rem;
     color: white;
@@ -59,8 +60,7 @@ th {
     display: block;
 }
 
-.form-wrapper .form-left input,
-.form-wrapper .form-center input  {
+.form-wrapper .form-box input  {
     margin: 0.5rem 0rem;
 }
 
@@ -68,9 +68,23 @@ th {
     display: flex;
 }
 
-.form-wrapper .form-left,
-.form-wrapper .form-center {
+.form-wrapper .form-box {
     margin-right: 5rem;
     border: 1px white solid;
     padding: 0.5rem;
 }
+
+.form-wrapper .form-box select {
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+}
+
+.form-wrapper .form-box .sublabel {
+    font-size: 1.1rem;
+}
+
+.form-wrapper .form-box .monster-substat {
+    margin: 0;
+}
+
+
