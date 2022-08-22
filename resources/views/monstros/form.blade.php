@@ -74,28 +74,28 @@
             </select>
 
             <label for="mNd">Desafio:</h2>
-            <input type="number" id="mNd" class="monster-nd">
+            <input type="number" id="mNd" class="monster-nd" min="0" max="30">
 
         </div>
         <div class="form-box">
 
             <label for="mFor">Força:</h2>
-            <input type="number" id="mFor" class="monster-for">
+            <input type="number" id="mFor" class="monster-for" min="1" max="50">
 
             <label for="mDes">Destreza:</h2>
-            <input type="number" id="mDes" class="monster-des">
+            <input type="number" id="mDes" class="monster-des" min="1" max="50">
 
             <label for="mCon">Constituição:</h2>
-            <input type="number" id="mCon" class="monster-con">
+            <input type="number" id="mCon" class="monster-con" min="1" max="50">
 
             <label for="mInt">Inteligência:</h2>
-            <input type="number" id="mInt" class="monster-int">
+            <input type="number" id="mInt" class="monster-int" min="1" max="50">
 
             <label for="mSab">Sabedoria:</h2>
-            <input type="number" id="mSab" class="monster-sab">
+            <input type="number" id="mSab" class="monster-sab" min="1" max="50">
 
             <label for="mCar">Carisma:</h2>
-            <input type="number" id="mCar" class="monster-car">
+            <input type="number" id="mCar" class="monster-car" min="1" max="50">
         </div>
 
         <div class="form-box">
@@ -107,19 +107,19 @@
             <input type="text" id="mAtq1" class="monster-atk">
 
             <label for="mBon1" class="sublabel">Bônus de Acerto:</h2>
-            <input type="number" id="mBon1" class="monster-substat">
+            <input type="number" id="mBon1" class="monster-substat" min="1" max="99">
 
-            <label for="mDmg" class="sublabel">Dano:</h2>
-            <input type="number" id="mDmg" class="monster-substat">
+            <label for="mDmg1" class="sublabel">Dano:</h2>
+            <input type="text" id="mDmg1" class="monster-substat">
 
-            <label for="mAtq1">Ataque 2:</h2>
-                <input type="text" id="mAtq1" class="monster-atk">
+            <label for="mAtq2">Ataque 2:</h2>
+                <input type="text" id="mAtq2" class="monster-atk">
 
-                <label for="mBon1" class="sublabel">Bônus de Acerto:</h2>
-                <input type="number" id="mBon1" class="monster-substat">
+                <label for="mBon2" class="sublabel">Bônus de Acerto:</h2>
+                <input type="number" id="mBon2" class="monster-substat" min="1" max="99">
 
-                <label for="mDmg" class="sublabel">Dano:</h2>
-                <input type="number" id="mDmg" class="monster-substat">
+                <label for="mDmg2" class="sublabel">Dano:</h2>
+                <input type="text" id="mDmg2" class="monster-substat">
 
         </div>
 
