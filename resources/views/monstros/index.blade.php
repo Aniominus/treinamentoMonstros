@@ -40,7 +40,7 @@
 
 
             <div>
-                <a type="button" class="btn" href="">Criar um Monstro</a>
+                <a type="button" class="btn" href="/form">Criar um Monstro</a>
             </div>
         </div>
 
