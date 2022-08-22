@@ -13,11 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
 
-    $nome = "Antonio";
+    $monstros = array(
 
-    return view('welcome',['nome' => $nome]);
+    'goblin' => array(
+        'nome' => 'Goblin',
+        'desafio'  => '1/4',
+        'defesa' => '13',
+        'tipo'  => 'Humanoide',
+        'ataque' => '+5',
+        'deslocamento' => '9 metros',
+    ),
+
+    'esqueleto' => array(
+        'nome' => 'Esqueleto',
+        'desafio'  => '1/2',
+        'defesa' => '15',
+        'tipo'  => 'Morto-Vivo',
+        'ataque' => '+7',
+        'deslocamento' => '12 metros',
+    ),
+
+    'gnoll' => array(
+        'nome' => 'Gnoll',
+        'desafio'  => '1',
+        'defesa' => '16',
+        'tipo'  => 'Humanoide',
+        'ataque' => '+9',
+        'deslocamento' => '15 metros',
+    )
+
+);
+
+    return view('monstros.index', ['monstros' => $monstros]);
 });
 
 
+
+Route::get('/form', function () {
+    return view('monstros.form');
+});
