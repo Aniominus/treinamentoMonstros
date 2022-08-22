@@ -22,7 +22,7 @@
 
         </style>
 
-        <link rel="stylesheet" href="\css\style.css">
+        <link rel="stylesheet" href="\css\app.css">
 
         <script src="/js/scripts.js"></script>
 
