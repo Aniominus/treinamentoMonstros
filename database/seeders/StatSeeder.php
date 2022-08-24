@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use DB;
+
 use Illuminate\Database\Seeder;
 
 class StatSeeder extends Seeder
