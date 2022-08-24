@@ -13,6 +13,19 @@ class TamanhoSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        DB::table('tamanhos')->insert([
+            'nome' => 'Pequeno'
+        ]);
+
+        DB::table('tamanhos')->insert([
+            'nome' => 'Médio'
+        ]);
+
+        DB::table('tamanhos')->insert([
+            'nome' => 'Grande'
+        ]);
+
+
     }
 }
