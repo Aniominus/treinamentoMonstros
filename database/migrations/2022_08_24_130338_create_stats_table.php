@@ -15,6 +15,16 @@ class CreateStatsTable extends Migration
     {
         Schema::create('stats', function (Blueprint $table) {
             $table->id();
+            $table->integer('forca');
+            $table->integer('destreza');
+            $table->integer('constituicao');
+            $table->integer('inteligencia');
+            $table->integer('sabedoria');
+            $table->integer('carisma');
+            $table->integer('deslocamento');
+            $table->integer('pontosdevida');
+            $table->integer('pontosdemana');
+            $table->integer('defesa');
             $table->timestamps();
         });
     }

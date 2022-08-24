@@ -15,6 +15,10 @@ class CreateAtaquesTable extends Migration
     {
         Schema::create('ataques', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->integer('acerto');
+            $table->integer('qtddados');
+            $table->string('dado');
             $table->timestamps();
         });
     }

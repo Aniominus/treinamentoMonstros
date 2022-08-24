@@ -15,6 +15,8 @@ class CreateMonstrosHasAtaquesTable extends Migration
     {
         Schema::create('monstros_has_ataques', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('monstro_id')->constrained('monstros');
+            $table->foreignId('ataque_id')->constrained('ataques');
             $table->timestamps();
         });
     }
