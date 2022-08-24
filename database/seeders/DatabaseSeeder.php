@@ -17,6 +17,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(array(
             TipoSeeder::class,
+            AtaqueSeeder::class,
+            StatSeeder::class,
+            TamanhoSeeder::class,
         ));
     }
 }
