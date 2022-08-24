@@ -19,7 +19,7 @@ class StatSeeder extends Seeder
             'forca' => '18',
             'destreza' => '9',
             'constituicao' => '16',
-            'inteligencia' => '',
+            'inteligencia' => '0',
             'sabedoria' => '12',
             'carisma' => '6',
             'deslocamento' => '12',
