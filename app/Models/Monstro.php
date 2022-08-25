@@ -36,5 +36,22 @@ class Monstro extends Model
      */
     protected $appends = [];
 
+    public function statRelationship(){
+        return $this->belongsTo(Stat::class,'stat_id');
+    }
+
+    public function tamanhoRelationship(){
+        return $this->belongsTo(Tamanho::class,'tamanho_id');
+    }
+
+    public function tipoRelationship(){
+        return $this->belongsTo(Tipo::class,'tipo_id');
+    }
+
+    public function ataqueRelationship(){
+        return $this->belongsToMany(Ataque::class, 'monstros_has_ataques', 'monstro_id', 'ataque_id');
+    }
+
+
     use HasFactory;
 }
