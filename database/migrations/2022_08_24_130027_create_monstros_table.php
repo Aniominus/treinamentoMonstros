@@ -17,9 +17,9 @@ class CreateMonstrosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->integer('desafio');
-            $table->foreignId('stats')->constrained('stats');
-            $table->foreignId('tamanho')->constrained('tamanhos');
-            $table->foreignId('tipo')->constrained('tipos');
+            $table->foreignId('stats_id')->constrained('stats');
+            $table->foreignId('tamanho_id')->constrained('tamanhos');
+            $table->foreignId('tipo_id')->constrained('tipos');
             $table->timestamps();
         });
     }
