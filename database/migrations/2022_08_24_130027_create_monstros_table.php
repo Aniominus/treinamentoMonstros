@@ -16,7 +16,7 @@ class CreateMonstrosTable extends Migration
         Schema::create('monstros', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->integer('desafio');
+            $table->float('desafio');
             $table->foreignId('stats_id')->constrained('stats');
             $table->foreignId('tamanho_id')->constrained('tamanhos');
             $table->foreignId('tipo_id')->constrained('tipos');
