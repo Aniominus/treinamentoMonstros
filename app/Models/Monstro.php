@@ -37,7 +37,7 @@ class Monstro extends Model
     protected $appends = [];
 
      /**
-     * Get the Campeonatos attribute.
+     * Get the relevant attributes from Stat, Tamanho, Tipo e Ataque.
      *
      * @return string
      */
@@ -56,6 +56,46 @@ class Monstro extends Model
     public function getAtaqueAttribute() {
         return $this->ataqueRelationship;
     }
+
+    /**
+     * Set the StatAttribute.
+     *
+     * @param  array  $value
+     * @return void
+     */
+    public function setStatAttribute($value) {
+        $this->statRelationship()->sync($value);
+    }
+    /**
+     * Set the TamanhoAttribute.
+     *
+     * @param  array  $value
+     * @return void
+     */
+    public function setTamanhotAttribute($value) {
+        $this->tamanhoRelationship()->sync($value);
+    }
+    /**
+     * Set the TipoAttribute.
+     *
+     * @param  array  $value
+     * @return void
+     */
+
+    public function setTipoAttribute($value) {
+        $this->tipoRelationship()->sync($value);
+    }
+    /**
+     * Set the AtaqueAttribute.
+     *
+     * @param  array  $value
+     * @return void
+     */
+    public function setAtaqueAttribute($value) {
+        $this->ataqueRelationship()->sync($value);
+    }
+
+
 
 
     public function statRelationship(){
