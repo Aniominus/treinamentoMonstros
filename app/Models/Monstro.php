@@ -36,8 +36,30 @@ class Monstro extends Model
      */
     protected $appends = [];
 
+     /**
+     * Get the Campeonatos attribute.
+     *
+     * @return string
+     */
+    public function getStatAttribute() {
+        return $this->statRelationship;
+    }
+
+    public function getTamanhoAttribute() {
+        return $this->tamanhoRelationship;
+    }
+
+    public function getTipoAttribute() {
+        return $this->tipoRelationship;
+    }
+
+    public function getAtaqueAttribute() {
+        return $this->ataqueRelationship;
+    }
+
+
     public function statRelationship(){
-        return $this->belongsTo(Stat::class,'stat_id');
+        return $this->belongsTo(Stat::class,'stats_id');
     }
 
     public function tamanhoRelationship(){
