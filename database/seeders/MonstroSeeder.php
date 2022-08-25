@@ -13,6 +13,13 @@ class MonstroSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('monstros')->insert([
+            'nome' => 'Goblin',
+            'desafio' => 0.25,
+            'stats' => 2,
+            'tamanho' => 1,
+            'tipo' => 1
+
+        ]);
     }
 }
