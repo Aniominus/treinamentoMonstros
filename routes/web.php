@@ -14,12 +14,14 @@ use App\Http\Controllers\MonstroController;
 |
 */
 
-Route::get('/', [ MonstroController::class, 'index'], function () {
-    return view('monstros.index');
-});
+// Route::get('/', [MonstroController::class, 'index'], function () {
+//     return view('monstros.index');
+// });
 
-Route::get('/form', function () {
-    return view('monstros.form');
-});
+// Route::get('/form', [MonstroController::class, 'create'], function () {
+//     return view('monstros.form');
+// });
 
-// Route::get('/test', [ TimeController::class, 'test'])->name('time.test'); // 'name of function'
+Route::get('/', [ MonstroController::class, 'index'])->name('monstros.index');
+
+Route::get('/create', [ MonstroController::class, 'create'])->name('monstros.create');
