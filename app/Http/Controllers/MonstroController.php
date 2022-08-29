@@ -80,11 +80,11 @@ class MonstroController extends Controller
                 'defesa' => $request->defesa
             ])->id,
             'tamanho_id' => $request->tamanho,
-            'tipo_id' => $request->tipo,
+            'tipo_id' => $request->tipo
         ]);
         $monstros->ataques = $request->ataques;
         //retorna a view index, onde as informações que a model time extrai do banco são exibidas
-        return redirect()->route('monstros.index');
+        return redirect()->route('monstro.index');
     }
 
     /**
@@ -101,7 +101,9 @@ class MonstroController extends Controller
         $tamanhos = $this->tamanhos;
         $tipos = $this->tipos;
         $ataques  = $this->ataques;
-        return view('monstros.form', compact('stats','tamanhos','tipos','ataques','monstro'));
+        $form = 'disabled';
+
+        return view('monstros.form', compact('stats','tamanhos','tipos','ataques','monstro','form'));
     }
 
     /**
@@ -121,8 +123,38 @@ class MonstroController extends Controller
         return view('monstros.form', compact('stats','tamanhos','tipos','ataques','monstro'));
     }
 
-
-
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $monstro = $this->monstros->find($id);
+        $monstro->update([
+            'nome' => $request->nome,
+            'desafio' => $request->desafio,
+            'stats_id' => $this->stats->find($monstro->stat->id)->update(
+            [
+                'forca' => $request->forca,
+                'destreza' => $request->destreza,
+                'constituicao' => $request->constituicao,
+                'inteligencia' => $request->inteligencia,
+                'sabedoria' => $request->sabedoria,
+                'carisma' => $request->carisma,
+                'deslocamento' => $request->deslocamento,
+                'pontosdevida' => $request->pontosdevida,
+                'pontosdemana' => $request->pontosdemana,
+                'defesa' => $request->defesa
+            ])->id,
+            'tamanho_id' => $request->tamanho,
+            'tipo_id' => $request->tipo
+        ]);
+        $monstro->ataqueRelationship()->attach($request->ataque);
+        return redirect()->route('monstro.index');
+    }
 
 
 }
