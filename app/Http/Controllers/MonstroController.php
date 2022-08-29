@@ -101,10 +101,27 @@ class MonstroController extends Controller
         $tamanhos = $this->tamanhos;
         $tipos = $this->tipos;
         $ataques  = $this->ataques;
-        return view('form', compact('stats','tamanhos','tipos','ataques','monstro'));
+        return view('monstros.form', compact('stats','tamanhos','tipos','ataques','monstro'));
     }
 
-    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $monstro = $this->monstros->find($id);
+
+        $stats = $this->stats;
+        $tamanhos = $this->tamanhos;
+        $tipos = $this->tipos;
+        $ataques  = $this->ataques;
+        return view('monstros.form', compact('stats','tamanhos','tipos','ataques','monstro'));
+    }
+
+
 
 
 
