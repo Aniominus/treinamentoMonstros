@@ -156,5 +156,17 @@ class MonstroController extends Controller
         return redirect()->route('monstro.index');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $monstro = $this->monstros->find($id);
+        $deleted = $monstro->delete();
+        return redirect()->route('monstro.index');
+    }
 
 }
