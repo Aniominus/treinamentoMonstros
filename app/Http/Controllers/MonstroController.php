@@ -84,7 +84,7 @@ class MonstroController extends Controller
         ]);
         $monstros->ataques = $request->ataques;
         //retorna a view index, onde as informações que a model time extrai do banco são exibidas
-        return redirect()->route('monstro.index');
+        return redirect()->route('monstros.index');
     }
 
     /**
@@ -153,7 +153,7 @@ class MonstroController extends Controller
             'tipo_id' => $request->tipo
         ]);
         $monstro->ataqueRelationship()->attach($request->ataque);
-        return redirect()->route('monstro.index');
+        return redirect()->route('monstros.index');
     }
 
     /**
@@ -166,7 +166,7 @@ class MonstroController extends Controller
     {
         $monstro = $this->monstros->find($id);
         $deleted = $monstro->delete();
-        return redirect()->route('monstro.index');
+        return redirect()->route('monstros.index');
     }
 
 }
