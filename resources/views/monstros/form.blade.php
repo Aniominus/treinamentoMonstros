@@ -77,17 +77,17 @@
             {!!Form::label('destreza', 'Destreza:')!!}
             {!!Form::number('destreza',   isset($monstro) ? $monstro->stat->destreza : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mCon">Constituição:</h2>
-            <input type="number" id="mCon" class="monster-con" min="1" max="50">
+            {!!Form::label('constituicao', 'Constituição:')!!}
+            {!!Form::number('constituicao',   isset($monstro) ? $monstro->stat->constituicao : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mInt">Inteligência:</h2>
-            <input type="number" id="mInt" class="monster-int" min="0" max="50">
+            {!!Form::label('inteligencia', 'Inteligência:')!!}
+            {!!Form::number('inteligencia',   isset($monstro) ? $monstro->stat->inteligencia : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mSab">Sabedoria:</h2>
-            <input type="number" id="mSab" class="monster-sab" min="1" max="50">
+            {!!Form::label('Sabedoria', 'Sabedoria:')!!}
+            {!!Form::number('sabedoria',   isset($monstro) ? $monstro->stat->sabedoria : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mCar">Carisma:</h2>
-            <input type="number" id="mCar" class="monster-car" min="1" max="50">
+            {!!Form::label('carisma', 'Carisma:')!!}
+            {!!Form::number('carisma',   isset($monstro) ? $monstro->stat->carisma : null, ['max' => 99, 'min' => 0, $form??null])!!}
         </div>
 
         <div class="form-box">
