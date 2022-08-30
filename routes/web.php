@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MonstroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,46 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', [MonstroController::class, 'index'], function () {
+//     return view('monstros.index');
+// });
 
+// Route::get('/form', [MonstroController::class, 'create'], function () {
+//     return view('monstros.form');
+// });
 
-Route::get('/', function () {
+Route::get('/', [ MonstroController::class, 'index'])->name('monstros.index');
 
-    $monstros = array(
+Route::get('/create', [ MonstroController::class, 'create'])->name('monstros.create');
 
-    'goblin' => array(
-        'nome' => 'Goblin',
-        'desafio'  => '1/4',
-        'defesa' => '13',
-        'tipo'  => 'Humanoide',
-        'ataque' => '+5',
-        'deslocamento' => '9 metros',
-    ),
+Route::post('/create', [ MonstroController::class, 'store'])->name('monstros.store');
 
-    'esqueleto' => array(
-        'nome' => 'Esqueleto',
-        'desafio'  => '1/2',
-        'defesa' => '15',
-        'tipo'  => 'Morto-Vivo',
-        'ataque' => '+7',
-        'deslocamento' => '12 metros',
-    ),
+// Route::match(array('PUT','PATCH'), '/update/{id}', [ MonstroController::class, 'update'])->name('monstros.update');
 
-    'gnoll' => array(
-        'nome' => 'Gnoll',
-        'desafio'  => '1',
-        'defesa' => '16',
-        'tipo'  => 'Humanoide',
-        'ataque' => '+9',
-        'deslocamento' => '15 metros',
-    )
+Route::put('/update/{id}', [ MonstroController::class, 'update'])->name('monstros.update');
 
-);
+Route::get('/show/{id}', [ MonstroController::class, 'show'])->name('monstros.show');
 
-    return view('monstros.index', ['monstros' => $monstros]);
-});
+Route::get('/edit/{id}', [ MonstroController::class, 'edit'])->name('monstros.edit');
 
-
-
-Route::get('/form', function () {
-    return view('monstros.form');
-});
+Route::delete('/destroy/{id}', [ MonstroController::class, 'destroy'])->name('monstros.destroy');
