@@ -42,7 +42,7 @@
 
 
             <div>
-                <a type="button" class="btn" href="/form">Criar um Monstro</a>
+                <a type="button" class="btn" href="{{route('monstros.create')}}">Criar um Monstro</a>
             </div>
         </div>
 
@@ -72,8 +72,8 @@
                 @endif
                 <td>{{$monstro->stat->deslocamento}} metros</td>
                 <td>
-                    <a type="button" class="btn" href="">Visualizar</a>
-                    <a type="button" class="btn" href="">Editar</a>
+                    <a type="button" class="btn" href="{{route('monstros.show',$monstro->id)}}">Visualizar</a>
+                    <a type="button" class="btn" href="{{route('monstros.edit',$monstro->id)}}">Editar</a>
                 </td>
             </tr>
         @endforeach
