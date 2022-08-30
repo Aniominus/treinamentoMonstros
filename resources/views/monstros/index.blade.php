@@ -29,6 +29,8 @@
     </head>
     <body>
 
+
+
         <div class="heading">
             <img src="/img/t20logo.png" alt="Logo">
         </div>
@@ -43,6 +45,10 @@
                 <a type="button" class="btn" href="/form">Criar um Monstro</a>
             </div>
         </div>
+
+        {{
+            $monstros;
+        }}
 
         <div class="bottom-wrapper">
             <div class="table-wrapper">
@@ -61,7 +67,7 @@
             <tr class="basic-info">
                 <td>{{$monstro['nome']}}</td>
                 <td>{{$monstro['desafio']}}</td>
-                <td>{{$monstro['tipo']}}</td>
+                <td>{{$monstro->tipo['nome']}}</td>
                 <td>{{$monstro['defesa']}}</td>
                 <td>{{$monstro['ataque']}}</td>
                 <td>{{$monstro['deslocamento']}}</td>
