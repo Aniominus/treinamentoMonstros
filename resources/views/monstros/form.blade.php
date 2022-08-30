@@ -50,52 +50,38 @@
 
         <div class="form-wrapper">
         <div class="form-box">
-            <label for="mName">Nome:</h2>
-            <input type="text" id="mName" class="monster-name">
+            {!!Form::label('nome', 'Nome:')!!}
+            {!!Form::text('nome',   isset($monstro) ? $monstro->nome : null, ['placeholder' => 'Somente Letras',  $form??null])!!}
 
-            <label for="mHp">Pontos de Vida:</h2>
-            <input type="number" id="mHp" class="monster-hp">
+            {!!Form::label('pontosdevida', 'Pontos de Vida:')!!}
+            {!!Form::number('pontosdevida',   isset($monstro) ? $monstro->stat->pontosdevida : null, ['min' => 1, $form??null])!!}
 
-            <label for="mPm">Pontos de Mana:</h2>
-            <input type="number" id="mPm" class="monster-pm">
+            {!!Form::label('pontosdemana', 'Pontos de Mana:')!!}
+            {!!Form::number('pontosdemana',   isset($monstro) ? $monstro->stat->pontosdemana : null, ['max' => 999, 'min' => 0, $form??null])!!}
 
-            <label for="tamanho">Tamanho</label>
-            <select name="tamanho">
-                <option value="min">Minúsculo</option>
-                <option value="peq">Pequeno</option>
-                <option value="med" selected>Médio</option>
-                <option value="grd">Grande</option>
-                <option value="enm">Enorme</option>
-                <option value="cls">Colossal</option>
-            </select>
+            {!!Form::label('tamanho', 'Tamanho:')!!}
+            {!!Form::select('tamanhos', $tamanhos, isset($monstro) ? $monstro->tamanho->nome : null, [$form??null])!!}
 
-            <label for="tipo">Tipo</label>
-            <select name="tipo">
-                <option value="animal">Animal</option>
-                <option value="construto">Construto</option>
-                <option value="espirito">Espírito</option>
-                <option value="humanoide">Humanoide</option>
-                <option value="monstro" selected>Monstro</option>
-                <option value="morto">Morto-Vivo</option>
-            </select>
+            {!!Form::label('tipo', 'Tipo:')!!}
+            {!!Form::select('tipo', $tipos, isset($monstro) ? $monstro->tipo->nome : null, [$form??null])!!}
 
-            <label for="mNd">Desafio:</h2>
-            <input type="number" id="mNd" class="monster-nd" min="0" max="30">
+            {!!Form::label('desafio', 'Desafio:')!!}
+            {!!Form::number('desafio',   isset($monstro) ? $monstro->desafio : null, ['step'=>0.05, 'max' => 30, 'min' => 0, $form??null])!!}
 
         </div>
         <div class="form-box">
 
-            <label for="mFor">Força:</h2>
-            <input type="number" id="mFor" class="monster-for" min="1" max="50">
+            {!!Form::label('forca', 'Força:')!!}
+            {!!Form::number('forca',   isset($monstro) ? $monstro->stat->forca : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mDes">Destreza:</h2>
-            <input type="number" id="mDes" class="monster-des" min="1" max="50">
+            {!!Form::label('destreza', 'Destreza:')!!}
+            {!!Form::number('destreza',   isset($monstro) ? $monstro->stat->destreza : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
             <label for="mCon">Constituição:</h2>
             <input type="number" id="mCon" class="monster-con" min="1" max="50">
 
             <label for="mInt">Inteligência:</h2>
-            <input type="number" id="mInt" class="monster-int" min="1" max="50">
+            <input type="number" id="mInt" class="monster-int" min="0" max="50">
 
             <label for="mSab">Sabedoria:</h2>
             <input type="number" id="mSab" class="monster-sab" min="1" max="50">
