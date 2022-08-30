@@ -46,10 +46,6 @@
             </div>
         </div>
 
-        {{
-            $monstros;
-        }}
-
         <div class="bottom-wrapper">
             <div class="table-wrapper">
                 <table class="main-table">
@@ -65,12 +61,16 @@
 
         @foreach ($monstros as $monstro)
             <tr class="basic-info">
-                <td>{{$monstro['nome']}}</td>
-                <td>{{$monstro['desafio']}}</td>
-                <td>{{$monstro->tipo['nome']}}</td>
-                <td>{{$monstro['defesa']}}</td>
-                <td>{{$monstro['ataque']}}</td>
-                <td>{{$monstro['deslocamento']}}</td>
+                <td>{{$monstro->nome}}</td>
+                <td>{{$monstro->desafio}}</td>
+                <td>{{$monstro->tipo->nome}}</td>
+                <td>{{$monstro->stat->defesa}}</td>
+                @if ($monstro->ataque->count() != 0)
+                    <td>{{$monstro->ataque->first()->nome}}</td>
+                @else
+                    <td>N/A</td>
+                @endif
+                <td>{{$monstro->stat->deslocamento}} metros</td>
                 <td>
                     <a type="button" class="btn" href="">Visualizar</a>
                     <a type="button" class="btn" href="">Editar</a>
