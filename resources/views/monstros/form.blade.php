@@ -42,6 +42,12 @@
 
         </div>
 
+        @if (isset($monstro))
+            {!! Form::open(['route' => array('monstros.update', $monstro->id), 'method' => 'PUT', 'name' => 'form'])!!}
+        @else
+            {!! Form::open(['route' => array('monstros.store'), 'method' => 'POST', 'name' => 'form'])!!}
+        @endif
+
         <div class="form-wrapper">
         <div class="form-box">
             <label for="mName">Nome:</h2>
@@ -127,10 +133,21 @@
 
         <div class="form-submit">
 
-            <input type="submit" value="Send">
+            {!! Form::submit('Salvar', ['class' => 'btn', $form??null]); !!}
 
         </div>
 
+        {!! Form::close() !!}
+
+        <div class="form-submit">
+
+    @if (isset($monstro))
+        {!! Form::open(['route' => array('monstros.destroy', $monstro->id), 'method' => 'DELETE', 'name' => 'form'])!!}
+        {!! Form::submit('Excluir', ['class' => 'btn', $form??null]); !!}
+        {!! Form::close() !!}
+    @endif
+
+        </div>
 
     </body>
 </html>
