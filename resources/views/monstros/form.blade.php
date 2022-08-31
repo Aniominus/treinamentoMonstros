@@ -38,6 +38,10 @@
 
             <h1>Criando seu monstro</h1>
 
+            <div>
+                <a type="button" class="btn" href="{{route('monstros.index')}}">Voltar</a>
+            </div>
+
             <p>Insira as estatísticas da criatura</p>
 
         </div>
@@ -139,4 +143,5 @@
         </div>
 
     </body>
+
 </html>
