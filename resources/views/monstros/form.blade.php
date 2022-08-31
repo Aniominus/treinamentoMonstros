@@ -60,10 +60,10 @@
             {!!Form::number('pontosdemana',   isset($monstro) ? $monstro->stat->pontosdemana : null, ['max' => 999, 'min' => 0, $form??null])!!}
 
             {!!Form::label('tamanho', 'Tamanho:')!!}
-            {!!Form::select('tamanho', $tamanhos, isset($monstro) ? $monstro->tamanho->nome : null, [$form??null])!!}
+            {!!Form::select('tamanho', $tamanhos, isset($monstro) ? $monstro->tamanho->id : null, [isset($form) ? $form : null])!!}
 
             {!!Form::label('tipo', 'Tipo:')!!}
-            {!!Form::select('tipo', $tipos, isset($monstro) ? $monstro->tipo->nome : null, [$form??null])!!}
+            {!!Form::select('tipo', $tipos, isset($monstro) ? $monstro->tipo->id : null, [$form??null])!!}
 
             {!!Form::label('desafio', 'Desafio:')!!}
             {!!Form::number('desafio',   isset($monstro) ? $monstro->desafio : null, ['step'=>0.05, 'max' => 30, 'min' => 0, $form??null])!!}
