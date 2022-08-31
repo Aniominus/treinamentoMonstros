@@ -103,10 +103,10 @@
             {!!Form::number('defesa',   isset($monstro) ? $monstro->stat->defesa : null, ['max' => 100, 'min' => 1, $form??null])!!}
 
             {!!Form::label('ataque[]', 'Ataque 1:')!!}
-            {!!Form::select('ataque[]', $ataques, isset($monstro) ? $monstro->ataque->first()->id : null, ['placeholder'=>' ' , $form??null])!!}
+            {!!Form::select('ataque[]', $ataques, (isset($monstro) && $monstro->ataque->get(0) !=null) ? $monstro->ataque->get(0)->id : null, ['placeholder'=>'' , $form??null])!!}
 
             {!!Form::label('ataque[]', 'Ataque 2:')!!}
-            {!!Form::select('ataque[]', $ataques, (isset($monstro) && $monstro->ataque->get(1) !=null) ? $monstro->ataque->get(1)->id : null, ['placeholder'=>' ' , $form??null])!!}
+            {!!Form::select('ataque[]', $ataques, (isset($monstro) && $monstro->ataque->get(1) !=null) ? $monstro->ataque->get(1)->id : null, ['placeholder'=>'' , $form??null])!!}
 
         </div>
 
