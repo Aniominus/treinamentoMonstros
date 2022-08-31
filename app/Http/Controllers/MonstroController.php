@@ -148,7 +148,7 @@ class MonstroController extends Controller
                 'pontosdevida' => $request->pontosdevida,
                 'pontosdemana' => $request->pontosdemana,
                 'defesa' => $request->defesa
-            ])->id,
+            ]),
             'tamanho_id' => $request->tamanho,
             'tipo_id' => $request->tipo
         ]);

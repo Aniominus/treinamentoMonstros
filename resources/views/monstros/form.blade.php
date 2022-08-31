@@ -60,7 +60,7 @@
             {!!Form::number('pontosdemana',   isset($monstro) ? $monstro->stat->pontosdemana : null, ['max' => 999, 'min' => 0, $form??null])!!}
 
             {!!Form::label('tamanho', 'Tamanho:')!!}
-            {!!Form::select('tamanhos', $tamanhos, isset($monstro) ? $monstro->tamanho->nome : null, [$form??null])!!}
+            {!!Form::select('tamanho', $tamanhos, isset($monstro) ? $monstro->tamanho->nome : null, [$form??null])!!}
 
             {!!Form::label('tipo', 'Tipo:')!!}
             {!!Form::select('tipo', $tipos, isset($monstro) ? $monstro->tipo->nome : null, [$form??null])!!}
@@ -95,7 +95,10 @@
             {!!Form::label('deslocamento', 'Deslocamento (Metros):')!!}
             {!!Form::number('deslocamento',   isset($monstro) ? $monstro->stat->deslocamento : null, ['max' => 100, 'min' => 0, $form??null])!!}
 
-            <label for="mAtq1">Ataque 1:</h2>
+            {!!Form::label('defesa', 'Defesa:')!!}
+            {!!Form::number('defesa',   isset($monstro) ? $monstro->stat->defesa : null, ['max' => 100, 'min' => 1, $form??null])!!}
+
+            {{-- <label for="mAtq1">Ataque 1:</h2>
             <input type="text" id="mAtq1" class="monster-atk">
 
             <label for="mBon1" class="sublabel">Bônus de Acerto:</h2>
@@ -111,7 +114,7 @@
                 <input type="number" id="mBon2" class="monster-substat" min="1" max="99">
 
                 <label for="mDmg2" class="sublabel">Dano:</h2>
-                <input type="text" id="mDmg2" class="monster-substat">
+                <input type="text" id="mDmg2" class="monster-substat"> --}}
 
         </div>
 
