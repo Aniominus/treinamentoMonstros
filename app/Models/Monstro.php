@@ -27,14 +27,29 @@ class Monstro extends Model
      *
      * @var array
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'tipoRelationship',
+        'statRelationship',
+        'tamanhoRelationship',
+        'ataqueRelationship',
+        'tamanho_id',
+        'tipo_id',
+        'stats_id'
+    ];
 
     /**
      * The accessors to append to the model's array form.
      *
      * @var array
      */
-    protected $appends = [];
+    protected $appends = [
+        'stat',
+        'tamanho',
+        'tipo',
+        'ataque'
+    ];
 
      /**
      * Get the relevant attributes from Stat, Tamanho, Tipo e Ataque.

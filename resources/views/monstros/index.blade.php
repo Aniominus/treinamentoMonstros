@@ -29,6 +29,8 @@
     </head>
     <body>
 
+
+
         <div class="heading">
             <img src="/img/t20logo.png" alt="Logo">
         </div>
@@ -40,7 +42,7 @@
 
 
             <div>
-                <a type="button" class="btn" href="/form">Criar um Monstro</a>
+                <a type="button" class="btn" href="{{route('monstros.create')}}">Criar um Monstro</a>
             </div>
         </div>
 
@@ -59,15 +61,23 @@
 
         @foreach ($monstros as $monstro)
             <tr class="basic-info">
-                <td>{{$monstro['nome']}}</td>
-                <td>{{$monstro['desafio']}}</td>
-                <td>{{$monstro['tipo']}}</td>
-                <td>{{$monstro['defesa']}}</td>
-                <td>{{$monstro['ataque']}}</td>
-                <td>{{$monstro['deslocamento']}}</td>
+                <td>{{$monstro->nome}}</td>
+                <td>{{$monstro->desafio}}</td>
+                <td>{{$monstro->tipo->nome}}</td>
+                <td>{{$monstro->stat->defesa}}</td>
+                @if ($monstro->ataque->count() != 0)
                 <td>
-                    <a type="button" class="btn" href="">Visualizar</a>
-                    <a type="button" class="btn" href="">Editar</a>
+                @foreach ($monstro->ataque as $ataque)
+                    <li>{{$ataque->nome}}</li>
+                @endforeach
+                </td>
+                @else
+                    <td>N/A</td>
+                @endif
+                <td>{{$monstro->stat->deslocamento}} metros</td>
+                <td>
+                    <a type="button" class="btn" href="{{route('monstros.show',$monstro->id)}}">Visualizar</a>
+                    <a type="button" class="btn" href="{{route('monstros.edit',$monstro->id)}}">Editar</a>
                 </td>
             </tr>
         @endforeach

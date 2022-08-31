@@ -18,7 +18,7 @@ class MonstroSeeder extends Seeder
         DB::table('monstros')->insert([
             'nome' => 'Goblin',
             'desafio' => 0.25,
-            'stats_id' => 2,
+            'stats_id' => 1,
             'tamanho_id' => 1,
             'tipo_id' => 1
 

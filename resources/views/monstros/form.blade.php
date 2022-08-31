@@ -38,88 +38,75 @@
 
             <h1>Criando seu monstro</h1>
 
+            <div>
+                <a type="button" class="btn" href="{{route('monstros.index')}}">Voltar</a>
+            </div>
+
             <p>Insira as estatísticas da criatura</p>
 
         </div>
 
+        @if (isset($monstro))
+            {!! Form::open(['route' => array('monstros.update', $monstro->id), 'method' => 'PUT', 'name' => 'form'])!!}
+        @else
+            {!! Form::open(['route' => array('monstros.store'), 'method' => 'POST', 'name' => 'form'])!!}
+        @endif
+
         <div class="form-wrapper">
         <div class="form-box">
-            <label for="mName">Nome:</h2>
-            <input type="text" id="mName" class="monster-name">
+            {!!Form::label('nome', 'Nome:')!!}
+            {!!Form::text('nome',   isset($monstro) ? $monstro->nome : null, ['placeholder' => 'Somente Letras',  $form??null])!!}
 
-            <label for="mHp">Pontos de Vida:</h2>
-            <input type="number" id="mHp" class="monster-hp">
+            {!!Form::label('pontosdevida', 'Pontos de Vida:')!!}
+            {!!Form::number('pontosdevida',   isset($monstro) ? $monstro->stat->pontosdevida : null, ['min' => 1, $form??null])!!}
 
-            <label for="mPm">Pontos de Mana:</h2>
-            <input type="number" id="mPm" class="monster-pm">
+            {!!Form::label('pontosdemana', 'Pontos de Mana:')!!}
+            {!!Form::number('pontosdemana',   isset($monstro) ? $monstro->stat->pontosdemana : null, ['max' => 999, 'min' => 0, $form??null])!!}
 
-            <label for="tamanho">Tamanho</label>
-            <select name="tamanho">
-                <option value="min">Minúsculo</option>
-                <option value="peq">Pequeno</option>
-                <option value="med" selected>Médio</option>
-                <option value="grd">Grande</option>
-                <option value="enm">Enorme</option>
-                <option value="cls">Colossal</option>
-            </select>
+            {!!Form::label('tamanho', 'Tamanho:')!!}
+            {!!Form::select('tamanho', $tamanhos, isset($monstro) ? $monstro->tamanho->id : null, [isset($form) ? $form : null])!!}
 
-            <label for="tipo">Tipo</label>
-            <select name="tipo">
-                <option value="animal">Animal</option>
-                <option value="construto">Construto</option>
-                <option value="espirito">Espírito</option>
-                <option value="humanoide">Humanoide</option>
-                <option value="monstro" selected>Monstro</option>
-                <option value="morto">Morto-Vivo</option>
-            </select>
+            {!!Form::label('tipo', 'Tipo:')!!}
+            {!!Form::select('tipo', $tipos, isset($monstro) ? $monstro->tipo->id : null, [$form??null])!!}
 
-            <label for="mNd">Desafio:</h2>
-            <input type="number" id="mNd" class="monster-nd" min="0" max="30">
+            {!!Form::label('desafio', 'Desafio:')!!}
+            {!!Form::number('desafio',   isset($monstro) ? $monstro->desafio : null, ['step'=>0.05, 'max' => 30, 'min' => 0, $form??null])!!}
 
         </div>
         <div class="form-box">
 
-            <label for="mFor">Força:</h2>
-            <input type="number" id="mFor" class="monster-for" min="1" max="50">
+            {!!Form::label('forca', 'Força:')!!}
+            {!!Form::number('forca',   isset($monstro) ? $monstro->stat->forca : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mDes">Destreza:</h2>
-            <input type="number" id="mDes" class="monster-des" min="1" max="50">
+            {!!Form::label('destreza', 'Destreza:')!!}
+            {!!Form::number('destreza',   isset($monstro) ? $monstro->stat->destreza : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mCon">Constituição:</h2>
-            <input type="number" id="mCon" class="monster-con" min="1" max="50">
+            {!!Form::label('constituicao', 'Constituição:')!!}
+            {!!Form::number('constituicao',   isset($monstro) ? $monstro->stat->constituicao : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mInt">Inteligência:</h2>
-            <input type="number" id="mInt" class="monster-int" min="1" max="50">
+            {!!Form::label('inteligencia', 'Inteligência:')!!}
+            {!!Form::number('inteligencia',   isset($monstro) ? $monstro->stat->inteligencia : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mSab">Sabedoria:</h2>
-            <input type="number" id="mSab" class="monster-sab" min="1" max="50">
+            {!!Form::label('Sabedoria', 'Sabedoria:')!!}
+            {!!Form::number('sabedoria',   isset($monstro) ? $monstro->stat->sabedoria : null, ['max' => 99, 'min' => 0, $form??null])!!}
 
-            <label for="mCar">Carisma:</h2>
-            <input type="number" id="mCar" class="monster-car" min="1" max="50">
+            {!!Form::label('carisma', 'Carisma:')!!}
+            {!!Form::number('carisma',   isset($monstro) ? $monstro->stat->carisma : null, ['max' => 99, 'min' => 0, $form??null])!!}
         </div>
 
         <div class="form-box">
 
-            <label for="mSp">Deslocamento:</h2>
-            <input type="number" id="mSp" class="monster-sp">
+            {!!Form::label('deslocamento', 'Deslocamento (Metros):')!!}
+            {!!Form::number('deslocamento',   isset($monstro) ? $monstro->stat->deslocamento : null, ['max' => 100, 'min' => 0, $form??null])!!}
 
-            <label for="mAtq1">Ataque 1:</h2>
-            <input type="text" id="mAtq1" class="monster-atk">
+            {!!Form::label('defesa', 'Defesa:')!!}
+            {!!Form::number('defesa',   isset($monstro) ? $monstro->stat->defesa : null, ['max' => 100, 'min' => 1, $form??null])!!}
 
-            <label for="mBon1" class="sublabel">Bônus de Acerto:</h2>
-            <input type="number" id="mBon1" class="monster-substat" min="1" max="99">
+            {!!Form::label('ataque[]', 'Ataque 1:')!!}
+            {!!Form::select('ataque[]', $ataques, (isset($monstro) && $monstro->ataque->get(0) !=null) ? $monstro->ataque->get(0)->id : null, ['placeholder'=>'' , $form??null])!!}
 
-            <label for="mDmg1" class="sublabel">Dano:</h2>
-            <input type="text" id="mDmg1" class="monster-substat">
-
-            <label for="mAtq2">Ataque 2:</h2>
-                <input type="text" id="mAtq2" class="monster-atk">
-
-                <label for="mBon2" class="sublabel">Bônus de Acerto:</h2>
-                <input type="number" id="mBon2" class="monster-substat" min="1" max="99">
-
-                <label for="mDmg2" class="sublabel">Dano:</h2>
-                <input type="text" id="mDmg2" class="monster-substat">
+            {!!Form::label('ataque[]', 'Ataque 2:')!!}
+            {!!Form::select('ataque[]', $ataques, (isset($monstro) && $monstro->ataque->get(1) !=null) ? $monstro->ataque->get(1)->id : null, ['placeholder'=>'' , $form??null])!!}
 
         </div>
 
@@ -127,10 +114,22 @@
 
         <div class="form-submit">
 
-            <input type="submit" value="Send">
+            {!! Form::submit('Salvar', ['class' => 'btn', $form??null]); !!}
 
         </div>
 
+        {!! Form::close() !!}
+
+        <div class="form-submit">
+
+    @if (isset($monstro))
+        {!! Form::open(['route' => array('monstros.destroy', $monstro->id), 'method' => 'DELETE', 'name' => 'form'])!!}
+        {!! Form::submit('Excluir', ['class' => 'btn', $form??null]); !!}
+        {!! Form::close() !!}
+    @endif
+
+        </div>
 
     </body>
+
 </html>

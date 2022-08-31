@@ -16,6 +16,18 @@ class TipoSeeder extends Seeder
     public function run()
     {
         DB::table('tipos')->insert([
+            'nome' => 'Animal'
+        ]);
+
+        DB::table('tipos')->insert([
+            'nome' => 'Construto'
+        ]);
+
+        DB::table('tipos')->insert([
+            'nome' => 'Espírito'
+        ]);
+
+        DB::table('tipos')->insert([
             'nome' => 'Humanoide'
         ]);
 
@@ -27,9 +39,7 @@ class TipoSeeder extends Seeder
             'nome' => 'Morto-Vivo'
         ]);
 
-        DB::table('tipos')->insert([
-            'nome' => 'Animal'
-        ]);
+
 
     }
 }

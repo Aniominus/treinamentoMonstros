@@ -15,6 +15,9 @@ class TamanhoSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tamanhos')->insert([
+            'nome' => 'Minúsculo'
+        ]);
 
         DB::table('tamanhos')->insert([
             'nome' => 'Pequeno'
@@ -28,6 +31,13 @@ class TamanhoSeeder extends Seeder
             'nome' => 'Grande'
         ]);
 
+        DB::table('tamanhos')->insert([
+            'nome' => 'Enorme'
+        ]);
+
+        DB::table('tamanhos')->insert([
+            'nome' => 'Colossal'
+        ]);
 
     }
 }

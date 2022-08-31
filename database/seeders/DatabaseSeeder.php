@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             AtaqueSeeder::class,
             StatSeeder::class,
             TamanhoSeeder::class,
-            MonstroSeeder::class
+            MonstroSeeder::class,
+            MonstroHasAtaqueSeeder::class
         ));
     }
 }
