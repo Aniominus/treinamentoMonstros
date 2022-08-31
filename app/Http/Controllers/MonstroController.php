@@ -64,7 +64,7 @@ class MonstroController extends Controller
     {
         //Solicita que a model crie um novo registro com as informações do request -?-
         //e atribui o valor de cada atributo do request ao registro de referência
-        $monstros = $this->monstros->create([
+        $monstro = $this->monstros->create([
             'nome' => $request->nome,
             'desafio' => $request->desafio,
             'stats_id' => $this->stats->create([
@@ -82,7 +82,7 @@ class MonstroController extends Controller
             'tamanho_id' => $request->tamanho,
             'tipo_id' => $request->tipo
         ]);
-        $monstros->ataques = $request->ataques;
+        $monstro->ataque = $request->ataque;
         //retorna a view index, onde as informações que a model time extrai do banco são exibidas
         return redirect()->route('monstros.index');
     }
