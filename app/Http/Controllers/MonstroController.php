@@ -136,7 +136,7 @@ class MonstroController extends Controller
         $monstro->update([
             'nome' => $request->nome,
             'desafio' => $request->desafio,
-            'stats_id' => $this->stats->find($monstro->stat->id)->update(
+            'stats_id' => tap($this->stats->find($monstro->stat->id))->update(
             [
                 'forca' => $request->forca,
                 'destreza' => $request->destreza,
@@ -148,7 +148,7 @@ class MonstroController extends Controller
                 'pontosdevida' => $request->pontosdevida,
                 'pontosdemana' => $request->pontosdemana,
                 'defesa' => $request->defesa
-            ]),
+            ])->id,
             'tamanho_id' => $request->tamanho,
             'tipo_id' => $request->tipo
         ]);
