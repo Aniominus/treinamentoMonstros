@@ -92,8 +92,8 @@
 
         <div class="form-box">
 
-            <label for="mSp">Deslocamento:</h2>
-            <input type="number" id="mSp" class="monster-sp">
+            {!!Form::label('deslocamento', 'Deslocamento (Metros):')!!}
+            {!!Form::number('deslocamento',   isset($monstro) ? $monstro->stat->deslocamento : null, ['max' => 100, 'min' => 0, $form??null])!!}
 
             <label for="mAtq1">Ataque 1:</h2>
             <input type="text" id="mAtq1" class="monster-atk">
