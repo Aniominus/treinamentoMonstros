@@ -152,7 +152,13 @@ class MonstroController extends Controller
             'tamanho_id' => $request->tamanho,
             'tipo_id' => $request->tipo
         ]);
-        $monstro->ataqueRelationship()->attach($request->ataque);
+
+        $monstro->ataqueRelationship()->sync(null);
+        if (isset($request->ataque)){
+            $ataques = array_unique($request->ataque);
+            foreach ($ataques as $ataque)
+            $monstro->ataqueRelationship()->attach($ataque);
+        }
         return redirect()->route('monstros.index');
     }
 
