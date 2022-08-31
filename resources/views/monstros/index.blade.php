@@ -66,7 +66,11 @@
                 <td>{{$monstro->tipo->nome}}</td>
                 <td>{{$monstro->stat->defesa}}</td>
                 @if ($monstro->ataque->count() != 0)
-                    <td>{{$monstro->ataque->first()->nome}}</td>
+                <td>
+                @foreach ($monstro->ataque as $ataque)
+                    <li>{{$ataque->nome}}</li>
+                @endforeach
+                </td>
                 @else
                     <td>N/A</td>
                 @endif

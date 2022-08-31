@@ -102,6 +102,9 @@
             {!!Form::label('defesa', 'Defesa:')!!}
             {!!Form::number('defesa',   isset($monstro) ? $monstro->stat->defesa : null, ['max' => 100, 'min' => 1, $form??null])!!}
 
+            {!!Form::label('ataque', 'Ataque:')!!}
+            {!!Form::select('ataque', $ataques, isset($monstro) ? $monstro->ataque->first()->id : null, [$form??null])!!}
+
             {{-- <label for="mAtq1">Ataque 1:</h2>
             <input type="text" id="mAtq1" class="monster-atk">
 
