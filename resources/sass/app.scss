@@ -1,0 +1,94 @@
+$base-color: red;
+$white-color: white;
+$yellow-color: yellow;
+
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://tormentarpg.com.br/wp-content/uploads/2020/05/capa-tormentarpg-2020-Tormenta2.png?id=4790);
+}
+
+.heading img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+.main-table,
+.top-wrapper,
+.form-wrapper,
+.form-submit
+ {
+    margin: 2rem;
+    color: $white-color;
+}
+
+.top-wrapper .btn,
+.form-wrapper label {
+    color: $yellow-color;
+    font-size: 1.5rem;
+}
+
+.top-wrapper p {
+    font-size: 1.5rem;
+}
+
+.main-table .basic-info .btn {
+    color: $yellow-color;
+    padding: 1rem;
+}
+
+.main-table .basic-info .btn:hover,
+.top-wrapper .btn:hover {
+    color:$base-color;
+}
+
+h1 {
+    color: $base-color;
+    font-size: 3rem;
+}
+
+td,
+th {
+    padding: 1rem;
+    border: 1px solid $white-color;
+}
+
+.form-wrapper label,
+.form-wrapper input {
+    display: block;
+}
+
+.form-wrapper .form-box input  {
+    margin: 0.5rem 0rem;
+}
+
+.form-wrapper {
+    display: flex;
+}
+
+.form-wrapper .form-box {
+    margin-right: 5rem;
+    border: 1px $white-color solid;
+    padding: 0.5rem;
+}
+
+.form-wrapper .form-box select {
+    margin-bottom: 0.5rem;
+    padding: 0.3rem;
+}
+
+.form-wrapper .form-box .sublabel {
+    font-size: 1.1rem;
+}
+
+.form-wrapper .form-box .monster-substat {
+    margin: 0.14rem;
+
+}
