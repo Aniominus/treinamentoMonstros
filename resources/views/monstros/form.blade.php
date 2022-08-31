@@ -102,26 +102,17 @@
             {!!Form::label('defesa', 'Defesa:')!!}
             {!!Form::number('defesa',   isset($monstro) ? $monstro->stat->defesa : null, ['max' => 100, 'min' => 1, $form??null])!!}
 
+            {!!Form::label('ataque1', 'Ataque 1:')!!}
+            {!!Form::select('ataque1', $ataques, isset($monstro) ? $monstro->ataque->first()->id : null, ['placeholder'=>' ' , $form??null])!!}
+
+            {!!Form::label('ataque2', 'Ataque 2:')!!}
+            {!!Form::select('ataque2', $ataques, (isset($monstro) && $monstro->ataque->get(1) !=null) ? $monstro->ataque->get(1)->id : null, ['placeholder'=>' ' , $form??null])!!}
+
+            {{--
+            @foreach ($monstro->ataque as $ataque )
             {!!Form::label('ataque', 'Ataque:')!!}
-            {!!Form::select('ataque', $ataques, isset($monstro) ? $monstro->ataque->first()->id : null, [$form??null])!!}
-
-            {{-- <label for="mAtq1">Ataque 1:</h2>
-            <input type="text" id="mAtq1" class="monster-atk">
-
-            <label for="mBon1" class="sublabel">Bônus de Acerto:</h2>
-            <input type="number" id="mBon1" class="monster-substat" min="1" max="99">
-
-            <label for="mDmg1" class="sublabel">Dano:</h2>
-            <input type="text" id="mDmg1" class="monster-substat">
-
-            <label for="mAtq2">Ataque 2:</h2>
-                <input type="text" id="mAtq2" class="monster-atk">
-
-                <label for="mBon2" class="sublabel">Bônus de Acerto:</h2>
-                <input type="number" id="mBon2" class="monster-substat" min="1" max="99">
-
-                <label for="mDmg2" class="sublabel">Dano:</h2>
-                <input type="text" id="mDmg2" class="monster-substat"> --}}
+            {!!Form::select('ataque', $ataques, isset($monstro) ? $ataque->id : null, [$form??null])!!}
+            @endforeach --}}
 
         </div>
 
