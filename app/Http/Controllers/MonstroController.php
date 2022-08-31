@@ -82,7 +82,11 @@ class MonstroController extends Controller
             'tamanho_id' => $request->tamanho,
             'tipo_id' => $request->tipo
         ]);
-        $monstro->ataque = $request->ataque;
+        if (isset($request->ataque)){
+            $ataques = array_unique($request->ataque);
+            foreach ($ataques as $ataque)
+            $monstro->ataqueRelationship()->attach($ataque);
+        }
         //retorna a view index, onde as informações que a model time extrai do banco são exibidas
         return redirect()->route('monstros.index');
     }
